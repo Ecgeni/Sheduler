@@ -7,8 +7,6 @@ services:
             - php
         ports:
             - "80:80"
-        volumes:
-            - ./app:./home/evg/www/sheduler
         networks:
             - app-network
 
@@ -19,14 +17,16 @@ services:
         depends_on:
             - postgres
         volumes:
-            - ./app:/home/www/sheduler
+            - ${PROJECT_PATH}:/app
         networks:
             - app-network
 
     postgres:
         image: postgres:latest
         environment:
-            POSTGRES_ROOT_PASSWORD: "${POSTGRES_ROOT_PASSWORD}"
+            POSTGRES_DB: "${POSTGRES_DB}"
+            POSTGRES_USER: "${POSTGRES_USER}"
+            POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
         ports:
             - "5432:5432"
         volumes:
