@@ -21,6 +21,11 @@ class Client
      */
     private string $name;
 
+    public function __constructor(string $name)
+    {
+        $this->name = $name;
+    }
+
     public function getId(): int
     {
         return $this->id;

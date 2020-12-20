@@ -4,6 +4,10 @@ namespace Tests\Infrastructure\Controller\Client;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
+/**
+ * @group client
+ * @group functional
+ */
 class ClientCreateControllerTest extends WebTestCase
 {
     public function testSuccessCreateClient()

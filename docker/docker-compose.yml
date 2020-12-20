@@ -1,0 +1,39 @@
+version: '3.4'
+
+services:
+    nginx:
+        image: nginx:latest
+        depends_on:
+            - php
+        ports:
+            - "80:80"
+        volumes:
+            - ./app:./home/evg/www/sheduler
+        networks:
+            - app-network
+
+    php:
+        build:
+            context: .
+            dockerfile: ./php.dockerfile
+        depends_on:
+            - postgres
+        volumes:
+            - ./app:/home/www/sheduler
+        networks:
+            - app-network
+
+    postgres:
+        image: postgres:latest
+        environment:
+            POSTGRES_ROOT_PASSWORD: "${POSTGRES_ROOT_PASSWORD}"
+        ports:
+            - "5432:5432"
+        volumes:
+            - ./volumes/db:/var/lib/postgesql/data
+        networks:
+            - app-network
+
+networks:
+    app-network:
+        driver: bridge
