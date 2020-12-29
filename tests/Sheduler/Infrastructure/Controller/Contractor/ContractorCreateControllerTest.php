@@ -2,13 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Tests\Infrastructure\Controller\Contractor;
+namespace Tests\Sheduler\Infrastructure\Controller\Contractor;
+
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
  * @group functional
  * @group contractor
  */
-class ContractorCreateControllerTest
+class ContractorCreateControllerTest extends WebTestCase
 {
     public function testSuccessCreateContractor()
     {

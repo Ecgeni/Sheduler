@@ -1,0 +1,19 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Spiral\Database\Config\DatabaseConfig:
+        arguments: ['%cycle_orm.configs%']
+
+    Spiral\Database\DatabaseManager:
+        arguments:
+            - '@Spiral\Database\Config\DatabaseConfig'
+
+    Cycle\ORM\Factory:
+        arguments:
+            - '@Spiral\Database\DatabaseManager'
+
+    Cycle\ORM\ORM:
+        arguments:
+            - '@Cycle\ORM\Factory'

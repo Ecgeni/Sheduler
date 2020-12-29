@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Infrastructure\Repository\Contractor;
+namespace Sheduler\Infrastructure\Repository\Contractor;
 
 use Cycle\ORM\Select\Repository;
 

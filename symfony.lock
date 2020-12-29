@@ -15,13 +15,13 @@
         "version": "1.4.5"
     },
     "cycle/annotated": {
-        "version": "v2.0.6"
+        "version": "v2.1.0"
     },
     "cycle/orm": {
         "version": "v1.2.17"
     },
     "cycle/schema-builder": {
-        "version": "v1.1.18"
+        "version": "v1.1.22"
     },
     "dnoegel/php-xdg-base-dir": {
         "version": "v0.1.1"
@@ -197,7 +197,7 @@
         "version": "v2.6.3"
     },
     "spiral/tokenizer": {
-        "version": "v2.1.8"
+        "version": "2.7.2"
     },
     "symfony/browser-kit": {
         "version": "v5.2.0"

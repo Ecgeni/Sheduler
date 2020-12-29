@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Domain\Client;
+namespace Sheduler\Domain\Contractor;
 
 use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;
@@ -9,30 +9,38 @@ use Cycle\Annotated\Annotation\Entity;
 /**
  * @Entity()
  */
-class Client
+class Contractor
 {
     /**
      * @Column(type="primary")
      */
-    private int $id;
+    private $id;
 
     /**
      * @Column(type="string")
      */
-    private string $name;
+    private $name;
 
-    public function __constructor(string $name)
+    public function __construct(string $name)
     {
         $this->name = $name;
     }
 
-    public function getId(): int
+    /**
+     * @return mixed
+     */
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getName(): string
+    /**
+     * @return mixed
+     */
+    public function getName()
     {
         return $this->name;
     }
+
+
 }

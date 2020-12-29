@@ -23,4 +23,4 @@
 
 .env
 docker/volumes/*/*
-!docker/volumes/*/.gitkeep
+!docker/volumes/nginx/logs/.gitkeep

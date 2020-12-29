@@ -1,0 +1,11 @@
+cycle_orm:
+    default: sheduledb
+    databases:
+        sheduledb:
+            connection: postgres
+    connections:
+        postgres:
+            driver: Spiral\Database\Driver\Postgres\PostgresDriver
+            connection: 'pgsql:host=postgres;'
+            username: '%env(POSTGRES_USER)%'
+            password: '%env(POSTGRES_PASSWORD)%'

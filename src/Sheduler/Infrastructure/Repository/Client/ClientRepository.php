@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Infrastructure\Repository\Client;
+namespace Sheduler\Infrastructure\Repository\Client;
 
 use Cycle\ORM\Select\Repository;
 

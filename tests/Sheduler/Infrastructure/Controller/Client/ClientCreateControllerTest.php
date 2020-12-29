@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Infrastructure\Controller\Client;
+namespace Tests\Sheduler\Infrastructure\Controller\Client;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
