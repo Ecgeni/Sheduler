@@ -3,21 +3,23 @@ declare(strict_types=1);
 
 namespace Sheduler\Domain\Client;
 
-use Cycle\Annotated\Annotation\Column;
-use Cycle\Annotated\Annotation\Entity;
+use Doctrine\ORM\Mapping as ORM;
+use Sheduler\Infrastructure\Repository\Client\ClientRepository;
 
 /**
- * @Entity()
+ * @ORM\Table(name="clients")
+ * @ORM\Entity(repositoryClass="ClientRepository::class")
  */
 class Client
 {
     /**
-     * @Column(type="primary")
+     * @ORM\Id()
+     * @ORM\Column(type="integer")
      */
-    private int $id;
+    private ?int $id;
 
     /**
-     * @Column(type="string")
+     * @ORM\Column(type="string")
      */
     private string $name;
 
@@ -26,7 +28,7 @@ class Client
         $this->name = $name;
     }
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }

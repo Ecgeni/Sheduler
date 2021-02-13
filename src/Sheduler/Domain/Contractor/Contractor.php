@@ -3,44 +3,38 @@ declare(strict_types=1);
 
 namespace Sheduler\Domain\Contractor;
 
-use Cycle\Annotated\Annotation\Column;
-use Cycle\Annotated\Annotation\Entity;
+use Doctrine\ORM\Mapping as ORM;
+use Sheduler\Infrastructure\Repository\Contractor\ContractorRepository;
 
 /**
- * @Entity()
+ * @ORM\Table(name="clients")
+ * @ORM\Entity(repositoryClass="ContractorRepository::class")
  */
 class Contractor
 {
     /**
-     * @Column(type="primary")
+     * @ORM\Id()
+     * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id;
 
     /**
-     * @Column(type="string")
+     * @ORM\Column(type="string")
      */
-    private $name;
+    private string $name;
 
     public function __construct(string $name)
     {
         $this->name = $name;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
-
-
 }

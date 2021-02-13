@@ -14,15 +14,6 @@
     "composer/xdebug-handler": {
         "version": "1.4.5"
     },
-    "cycle/annotated": {
-        "version": "v2.1.0"
-    },
-    "cycle/orm": {
-        "version": "v1.2.17"
-    },
-    "cycle/schema-builder": {
-        "version": "v1.1.22"
-    },
     "dnoegel/php-xdg-base-dir": {
         "version": "v0.1.1"
     },
@@ -38,11 +29,51 @@
             "config/routes/annotations.yaml"
         ]
     },
+    "doctrine/cache": {
+        "version": "1.10.2"
+    },
     "doctrine/collections": {
         "version": "1.6.7"
     },
+    "doctrine/common": {
+        "version": "3.1.1"
+    },
+    "doctrine/dbal": {
+        "version": "2.12.1"
+    },
+    "doctrine/doctrine-bundle": {
+        "version": "2.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.0",
+            "ref": "40631978d2c4adc9b11220b13eba539b727c36a8"
+        },
+        "files": [
+            "config/packages/doctrine.yaml",
+            "config/packages/prod/doctrine.yaml",
+            "src/Entity/.gitignore",
+            "src/Repository/.gitignore"
+        ]
+    },
+    "doctrine/doctrine-migrations-bundle": {
+        "version": "2.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.2",
+            "ref": "baaa439e3e3179e69e3da84b671f0a3e4a2f56ad"
+        },
+        "files": [
+            "config/packages/doctrine_migrations.yaml",
+            "migrations/.gitignore"
+        ]
+    },
+    "doctrine/event-manager": {
+        "version": "1.1.1"
+    },
     "doctrine/inflector": {
-        "version": "1.4.3"
+        "version": "2.0.3"
     },
     "doctrine/instantiator": {
         "version": "1.4.0"
@@ -50,17 +81,32 @@
     "doctrine/lexer": {
         "version": "1.2.1"
     },
+    "doctrine/migrations": {
+        "version": "3.1.0"
+    },
+    "doctrine/orm": {
+        "version": "2.8.1"
+    },
+    "doctrine/persistence": {
+        "version": "2.1.0"
+    },
+    "doctrine/sql-formatter": {
+        "version": "1.1.1"
+    },
     "felixfbecker/advanced-json-rpc": {
         "version": "v3.1.1"
     },
     "felixfbecker/language-server-protocol": {
         "version": "v1.5.0"
     },
-    "laminas/laminas-hydrator": {
-        "version": "3.2.0"
+    "friendsofphp/proxy-manager-lts": {
+        "version": "v1.0.3"
     },
-    "laminas/laminas-stdlib": {
-        "version": "3.3.1"
+    "laminas/laminas-code": {
+        "version": "4.0.0"
+    },
+    "laminas/laminas-eventmanager": {
+        "version": "3.3.0"
     },
     "laminas/laminas-zendframework-bridge": {
         "version": "1.1.1"
@@ -184,21 +230,6 @@
     "sebastian/version": {
         "version": "3.0.2"
     },
-    "spiral/core": {
-        "version": "v1.4.4"
-    },
-    "spiral/database": {
-        "version": "v2.7.20"
-    },
-    "spiral/logger": {
-        "version": "v1.2.2"
-    },
-    "spiral/pagination": {
-        "version": "v2.6.3"
-    },
-    "spiral/tokenizer": {
-        "version": "2.7.2"
-    },
     "symfony/browser-kit": {
         "version": "v5.2.0"
     },
@@ -228,6 +259,9 @@
     },
     "symfony/deprecation-contracts": {
         "version": "v2.2.0"
+    },
+    "symfony/doctrine-bridge": {
+        "version": "v5.2.3"
     },
     "symfony/dom-crawler": {
         "version": "v5.2.0"
@@ -291,6 +325,9 @@
     "symfony/http-kernel": {
         "version": "v5.2.0"
     },
+    "symfony/orm-pack": {
+        "version": "v2.1.0"
+    },
     "symfony/phpunit-bridge": {
         "version": "4.3",
         "recipe": {
@@ -321,6 +358,9 @@
     "symfony/polyfill-php80": {
         "version": "v1.20.0"
     },
+    "symfony/proxy-manager-bridge": {
+        "version": "v5.2.3"
+    },
     "symfony/routing": {
         "version": "5.1",
         "recipe": {
@@ -337,6 +377,9 @@
     },
     "symfony/service-contracts": {
         "version": "v2.2.0"
+    },
+    "symfony/stopwatch": {
+        "version": "v5.2.3"
     },
     "symfony/string": {
         "version": "v5.2.0"

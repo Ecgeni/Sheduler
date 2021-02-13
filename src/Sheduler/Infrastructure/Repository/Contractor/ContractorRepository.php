@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace Sheduler\Infrastructure\Repository\Contractor;
 
-use Cycle\ORM\Select\Repository;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
-class ContractorRepository extends Repository
+class ContractorRepository extends ServiceEntityRepository
 {
-
 }
