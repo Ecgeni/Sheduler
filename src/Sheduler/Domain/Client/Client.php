@@ -14,6 +14,7 @@ class Client
 {
     /**
      * @ORM\Id()
+     * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private ?int $id;
@@ -23,7 +24,7 @@ class Client
      */
     private string $name;
 
-    public function __constructor(string $name)
+    public function __construct(string $name)
     {
         $this->name = $name;
     }

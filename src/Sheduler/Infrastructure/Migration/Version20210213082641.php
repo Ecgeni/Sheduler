@@ -20,16 +20,17 @@ final class Version20210213082641 extends AbstractMigration
 
     public function up(Schema $schema) : void
     {
-        $table = $schema->createTable('shedules');
-        $table->addColumn('id', Types::INTEGER, ['unsigned' => true]);
-        $table->addColumn('contractor_id', Types::INTEGER, ['unsigned' => true]);
-        $table->addColumn('datetime_from', Types::DATETIMETZ_IMMUTABLE, ['null' => false]);
-        $table->addColumn('datetime_to', Types::DATETIMETZ_IMMUTABLE, ['null' => false]);
-        $table->setPrimaryKey(['id']);
+        $this->addSql("
+        CREATE TABLE shedules(
+            id SERIAL,
+            contractor_id INTEGER NOT NULL,
+            datetime_from TIMESTAMP WITH TIME ZONE NOT NULL,
+            datetime_to TIMESTAMP WITH TIME ZONE NOT NULL
+        )");
     }
 
     public function down(Schema $schema) : void
     {
-        $schema->dropTable('shedule');
+        $schema->dropTable('shedules');
     }
 }

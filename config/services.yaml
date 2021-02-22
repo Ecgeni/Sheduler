@@ -29,3 +29,11 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    Sheduler\Application\:
+        resource: '../src/Sheduler/Application/*'
+        exclude:
+            - '../src/Sheduler/Application/Event'
+
+    Sheduler\Infrastructure\Repository\:
+        resource: '../src/Sheduler/Infrastructure/Repository/*'

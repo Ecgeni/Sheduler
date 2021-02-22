@@ -20,10 +20,11 @@ final class Version20210213075811 extends AbstractMigration
 
     public function up(Schema $schema) : void
     {
-        $table = $schema->createTable('contractors');
-        $table->addColumn('id', Types::INTEGER, ['unsigned' => true]);
-        $table->addColumn('name', Types::STRING, ['length' => 255]);
-        $table->setPrimaryKey(['id']);
+        $this->addSql("
+        CREATE TABLE contractors(
+            id SERIAL,
+            name CHAR(255) NOT NULL
+        )");
     }
 
     public function down(Schema $schema) : void

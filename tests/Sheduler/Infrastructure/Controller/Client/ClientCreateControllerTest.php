@@ -2,7 +2,11 @@
 
 namespace Tests\Sheduler\Infrastructure\Controller\Client;
 
+use Doctrine\DBAL\Connection;
+use Sheduler\Domain\Client\Client;
+use Sheduler\Infrastructure\Repository\Client\ClientRepository;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\BrowserKit\AbstractBrowser;
 
 /**
  * @group client
@@ -10,12 +14,25 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
  */
 class ClientCreateControllerTest extends WebTestCase
 {
-    public function testSuccessCreateClient()
+    private AbstractBrowser $client;
+    private ?ClientRepository $clientRepository;
+
+    public function setUp(): void
     {
-        $client = static::createClient();
+        parent::setUp();
+        $this->client = static::createClient();
+        $this->clientRepository = static::$container->get(ClientRepository::class);
+    }
 
-        $client->request("POST", "/client");
+    public function testSuccessCreateClient(): void
+    {
+        $name = 'test-name';
+        $this->client->request("POST", "/client", ['name' => $name]);
 
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+
+        $result = $this->clientRepository->findByName($name);
+
+        $this->assertInstanceOf(Client::class, $result);
     }
 }

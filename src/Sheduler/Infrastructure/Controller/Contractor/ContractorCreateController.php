@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ContractorCreateController extends AbstractController
+final class ContractorCreateController extends AbstractController
 {
     /** @Route("/contractor", methods={"POST"}) */
     public function create(): JsonResponse
